@@ -2,51 +2,61 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/btn_loginadmin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/LoginAdmin2"
-    tools:context=".LoginAdmin2">
+    android:background="@drawable/ScanKtp"
+    tools:context=".ScanKtp">
 
     <Button
-        android:id="@+id/btn_masukloginadmin"
+        android:id="@+id/btn_simpanscanktp"
         android:layout_width="200sp"
         android:layout_height="60sp"
         android:backgroundTint="#8B1E2E"
-        android:text="Masuk"
+        android:text="Simpan"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798" />
+        app:layout_constraintVertical_bias="0.801" />
 
     <EditText
-        android:id="@+id/txt_idloginadmin"
+        android:id="@+id/txt_inputnama"
         android:layout_width="250sp"
         android:layout_height="40sp"
         android:ems="10"
         android:inputType="text"
-        android:text="id"
+        android:text="input nama"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="0.329" />
 
     <EditText
-        android:id="@+id/txt_psloginadmin"
+        android:id="@+id/txt_inputnik"
         android:layout_width="250sp"
         android:layout_height="40sp"
-        android:layout_marginTop="68sp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="text"
-        android:text="password"
-        app:layout_constraintEnd_toEndOf="@+id/txt_idloginadmin"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_idloginadmin"
-        app:layout_constraintTop_toBottomOf="@+id/txt_idloginadmin" />
+        android:text="input nik"
+        app:layout_constraintEnd_toEndOf="@+id/txt_inputnama"
+        app:layout_constraintStart_toStartOf="@+id/txt_inputnama"
+        app:layout_constraintTop_toBottomOf="@+id/txt_inputnama" />
 
+    <EditText
+        android:id="@+id/txt_scanktp"
+        android:layout_width="250sp"
+        android:layout_height="40sp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="scan ktp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_inputnama"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_inputnama"
+        app:layout_constraintTop_toBottomOf="@+id/txt_inputnik" />
 </androidx.constraintlayout.widget.ConstraintLayout>

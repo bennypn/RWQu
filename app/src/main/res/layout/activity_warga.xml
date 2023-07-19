@@ -7,4 +7,28 @@
     android:background="@drawable/WargaActivity"
     tools:context=".WargaActivity">
 
+    <Button
+        android:id="@+id/btn_hasilakhirhalwarga"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Hasil Akhir"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/btn_hasilsuara"
+        tools:layout_editor_absoluteY="606dp" />
+
+    <Button
+        android:id="@+id/btn_hasilsuara"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="44sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Hasil Suara"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.889" />
 </androidx.constraintlayout.widget.ConstraintLayout>

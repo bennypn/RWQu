@@ -5,4 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/frame_1"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/btn_adminpage"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:backgroundTint="#8E1E2E"
+        android:text="Admin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <Button
+        android:id="@+id/btn_wargapage"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Warga"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_adminpage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_adminpage"
+        app:layout_constraintTop_toBottomOf="@+id/btn_adminpage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ScreenAdmin"
-    tools:context=".ScreenAdmin" />
+    tools:context=".ScreenAdmin" >
+
+    <Button
+        android:id="@+id/btn_pagedataadmin"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Data Admin"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <Button
+        android:id="@+id/btn_pagedatapaslon"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Data Paslon"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_pagedataadmin"
+        app:layout_constraintStart_toStartOf="@+id/btn_pagedataadmin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pagedataadmin" />
+
+    <Button
+        android:id="@+id/btn_pagedatapemilih"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Data Pemilih"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_pagedataadmin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_pagedataadmin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pagedatapaslon" />
+
+    <Button
+        android:id="@+id/btn_pageregispemilih"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Registrasi Pemilih"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_pagedataadmin"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="@+id/btn_pagedataadmin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pagedatapemilih" />
+</androidx.constraintlayout.widget.ConstraintLayout>

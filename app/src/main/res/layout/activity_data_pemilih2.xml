@@ -7,4 +7,17 @@
     android:background="@drawable/DataPemilih2"
     tools:context=".DataPemilih2">
 
+    <Button
+        android:id="@+id/btn_simpandatapemilih"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Simpan"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,28 @@
     android:background="@drawable/SuaraSementara"
     tools:context=".SuaraSementara">
 
+    <Button
+        android:id="@+id/btn_kembalisuarasementara"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="44dp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Kembali"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911" />
+
+    <Button
+        android:id="@+id/btn_tampilsuarasementara"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:backgroundTint="#8B1E2E"
+        android:text="Tampil"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toEndOf="@+id/btn_kembalisuarasementara"
+        tools:layout_editor_absoluteY="621dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
