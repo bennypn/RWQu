@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DataPaslon extends AppCompatActivity {
+public class DataPaslon2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_paslon);
+        setContentView(R.layout.activity_data_paslon3);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/LoginAdmin"
-    tools:context=".LoginAdmin">
+    android:background="@drawable/LoginAdmin2"
+    tools:context=".LoginAdmin2">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

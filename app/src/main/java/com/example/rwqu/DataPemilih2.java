@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DataPemilih extends AppCompatActivity {
+public class DataPemilih2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_pemilih);
+        setContentView(R.layout.activity_data_pemilih2);
     }
 }
