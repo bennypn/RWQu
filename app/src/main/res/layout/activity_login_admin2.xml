@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/btn_loginadmin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/LoginAdmin2"
+    android:background="@drawable/loginscreenadmin"
     tools:context=".LoginAdmin2">
 
     <Button
@@ -24,29 +23,41 @@
 
     <EditText
         android:id="@+id/txt_idloginadmin"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
+        android:layout_width="251dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:inputType="text"
-        android:text="id"
+        android:hint="id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="0.423" />
 
     <EditText
         android:id="@+id/txt_psloginadmin"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
         android:layout_marginTop="68sp"
         android:ems="10"
-        android:inputType="text"
-        android:text="password"
+        android:inputType="textPassword"
+        android:hint="password"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txt_idloginadmin"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_idloginadmin"
-        app:layout_constraintTop_toBottomOf="@+id/txt_idloginadmin" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_idloginadmin"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_masukloginadmin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

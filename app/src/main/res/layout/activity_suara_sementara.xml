@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/SuaraSementara"
+    android:background="@drawable/screensuarasementara"
     tools:context=".SuaraSementara">
 
     <Button
@@ -24,11 +24,12 @@
         android:id="@+id/btn_tampilsuarasementara"
         android:layout_width="150sp"
         android:layout_height="50sp"
+        android:layout_marginBottom="68dp"
         android:backgroundTint="#8B1E2E"
         android:text="Tampil"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toEndOf="@+id/btn_kembalisuarasementara"
-        tools:layout_editor_absoluteY="621dp" />
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toEndOf="@+id/btn_kembalisuarasementara" />
 </androidx.constraintlayout.widget.ConstraintLayout>

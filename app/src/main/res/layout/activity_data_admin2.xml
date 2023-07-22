@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/DataAdmin2"
+    android:background="@drawable/screendataadmin"
     tools:context=".DataAdmin2">
 
     <Button
@@ -23,26 +23,40 @@
 
     <EditText
         android:id="@+id/txt_iddataadmin"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
+        android:layout_width="259dp"
+        android:layout_height="56dp"
         android:ems="10"
         android:inputType="text"
-        android:text="id"
+        android:hint="id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintVertical_bias="0.52" />
 
     <EditText
         android:id="@+id/txt_psdataadmin"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
+        android:layout_width="256dp"
+        android:layout_height="55dp"
         android:layout_marginTop="68sp"
         android:ems="10"
-        android:inputType="text"
-        android:text="password"
+        android:inputType="textPassword"
+        android:hint="password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_iddataadmin"
-        tools:layout_editor_absoluteX="78dp" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_simpandataadmin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

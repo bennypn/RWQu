@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ScanKtp"
+    android:background="@drawable/screenscanktp"
     tools:context=".ScanKtp">
 
     <Button
@@ -23,40 +23,41 @@
 
     <EditText
         android:id="@+id/txt_inputnama"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
         android:ems="10"
+        android:hint="input nama"
         android:inputType="text"
-        android:text="input nama"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.329" />
 
     <EditText
         android:id="@+id/txt_inputnik"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="52dp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:hint="input nik"
         android:inputType="text"
-        android:text="input nik"
         app:layout_constraintEnd_toEndOf="@+id/txt_inputnama"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_inputnama"
         app:layout_constraintTop_toBottomOf="@+id/txt_inputnama" />
 
     <EditText
         android:id="@+id/txt_scanktp"
-        android:layout_width="250sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="52dp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
         android:ems="10"
+        android:hint="scan ktp"
         android:inputType="text"
-        android:text="scan ktp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txt_inputnama"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_inputnama"
-        app:layout_constraintTop_toBottomOf="@+id/txt_inputnik" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_inputnik"
+        app:layout_constraintVertical_bias="0.121" />
 </androidx.constraintlayout.widget.ConstraintLayout>
