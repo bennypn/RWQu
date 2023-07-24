@@ -1,21 +1,16 @@
 package com.example.rwqu;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.example.rwqu.HelperClass.Candidate;
+import com.example.rwqu.HelperClass.CandidateAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,56 +22,79 @@ import java.util.List;
 
 public class HasilSuara extends AppCompatActivity {
 
-    private BarChart barChart;
-    private DatabaseReference databaseReference;
+    private RecyclerView recyclerView;
+    private CandidateAdapter candidateAdapter;
+    private List<Candidate> candidateList;
+    private Integer numVote1 = 0, numVote2 = 0, numVote3 = 0;
+    private Boolean checkData = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_suara3);
 
-        barChart = findViewById(R.id.barChart);
+        recyclerView = findViewById(R.id.recyclerView2);
+        Button btnBack = findViewById(R.id.btn_kembalihasilpemilihan);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        candidateList = new ArrayList<>();
+        candidateAdapter = new CandidateAdapter(candidateList, 0); // Set initial totalVotes to 0
+        recyclerView.setAdapter(candidateAdapter);
 
-        // Inisialisasi Firebase Database
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Transaction").child("votes");
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(HasilSuara.this,
+                        WargaActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
 
-        // Ambil data dari Firebase dan tampilkan pada BarChart
-        getDataFromFirebase();
-    }
-
-    private void getDataFromFirebase() {
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        // Read data from Firebase Realtime Database
+        DatabaseReference query = FirebaseDatabase.getInstance().getReference().child("Transaction");
+        if(!checkData){
+            Refresh(query);
+            checkData = true;
+        }
+        query.child("candidate").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<BarEntry> entries = new ArrayList<>();
-                final List<String> labels = new ArrayList<>();
-
+                candidateList.clear();
+                int totalVotes = 0; // Initialize totalVotes
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String label = snapshot.getKey();
-                    int value = snapshot.getValue(Integer.class);
-                    entries.add(new BarEntry(labels.size(), value));
-                    labels.add(label);
+                    Candidate candidate = snapshot.getValue(Candidate.class);
+                    if (candidate != null) {
+                        candidateList.add(candidate);
+                        totalVotes += candidate.getNumOfVotes(); // Update totalVotes
+                    }
                 }
-
-                BarDataSet dataSet = new BarDataSet(entries, "Votes");
-                dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-                dataSet.setValueTextColor(android.R.color.black);
-
-                BarData barData = new BarData(dataSet);
-                barChart.setData(barData);
-
-                XAxis xAxis = barChart.getXAxis();
-                xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-                xAxis.setGranularity(1f);
-                xAxis.setLabelRotationAngle(45f);
-                xAxis.setDrawGridLines(false);
-
-                barChart.invalidate();
+                candidateAdapter = new CandidateAdapter(candidateList, totalVotes); // Update totalVotes in the adapter
+                recyclerView.setAdapter(candidateAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle error jika dibutuhkan
+                // Handle error if data retrieval is canceled
+            }
+        });
+    }
+
+    private void Refresh(DatabaseReference query){
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                numVote1 = dataSnapshot.child("numOfVotes_1").getValue(Integer.class);
+                numVote2 = dataSnapshot.child("numOfVotes_2").getValue(Integer.class);
+                numVote3 = dataSnapshot.child("numOfVotes_3").getValue(Integer.class);
+
+                query.child("candidate/candidate_1/numOfVotes").setValue(numVote1);
+                query.child("candidate/candidate_2/numOfVotes").setValue(numVote2);
+                query.child("candidate/candidate_3/numOfVotes").setValue(numVote3);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle error if data retrieval is canceled
             }
         });
     }

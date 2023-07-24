@@ -1,4 +1,4 @@
-package com.example.rwqu;
+package com.example.rwqu.HelperClass;
 
 public class Voter {
     private String voterNIK;

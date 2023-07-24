@@ -2,6 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.RWQu" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+
+        <item name="colorPrimary">#8B1E2E</item>
+        <item name="colorPrimaryDark">#FF5158</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 

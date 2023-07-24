@@ -56,4 +56,33 @@
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="@+id/btn_pagedataadmin"
         app:layout_constraintTop_toBottomOf="@+id/btn_pagedatapemilih" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="64dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Close Vote"
+        android:textColor="#8B1E2E"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pageregispemilih"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="geser ke kanan untuk menutup vote"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
