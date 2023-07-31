@@ -91,22 +91,12 @@ public class LoginAdmin2 extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(),"Login successful!!",Toast.LENGTH_LONG).show();
                                     // hide the progress bar
                                     progressBar.setVisibility(View.GONE);
-
+                                    Intent intent;
+                                    intent = new Intent(LoginAdmin2.this,
+                                            ScreenAdmin.class);
+                                    startActivity(intent);
                                     // if sign-in is successful
                                     // intent to home activity
-                                    Intent intent;
-                                    if(user.equals("admin")){
-                                        intent = new Intent(LoginAdmin2.this,
-                                                ScreenAdmin.class);
-                                        startActivity(intent);
-
-                                    }else{
-                                        Toast.makeText(getApplicationContext(),"Login failed!!",Toast.LENGTH_LONG).show();
-
-                                        // hide the progress bar
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-
 
                                 }
 
